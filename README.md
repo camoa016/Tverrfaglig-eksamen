@@ -36,6 +36,7 @@ Other application behavior:
 
 - Serves static files from the `src/` folder.
 - Admin panel is available at `/admin` and is served from `src/adminpanel.html`.
+- Admin assets are loaded from `/adminpanel.css` and `/adminpanel.js` to keep paths stable under `/admin/`.
 - Root endpoint `/` returns a basic server message.
 - Health check endpoint `/health` returns `{ status: 'OK' }`.
 
@@ -52,13 +53,19 @@ Other application behavior:
    ```
    Then edit `.env` if you need custom database settings.
 
-3. Start PostgreSQL with Docker Compose:
+3. Start the full stack with Docker Compose:
    ```bash
    docker-compose up -d
    ```
-   This starts the database and initializes the `Produkt` table from `spørringer.sql`.
+   This starts the database, the Node.js app, and the NGINX reverse proxy.
 
-4. Run the server:
+   The NGINX proxy is configured so `/admin` is restricted to local subnet access, while the rest of the site remains publicly available.
+
+4. Open the app in your browser:
+   - App/API base: `http://localhost/`
+   - Admin panel: `http://localhost/admin`
+
+5. If you want to run only the app locally instead of using Docker:
    ```bash
    npm start
    ```
@@ -66,10 +73,6 @@ Other application behavior:
    ```bash
    npm run dev
    ```
-
-5. Open the app in your browser:
-   - API base: `http://localhost:3000/`
-   - Admin panel: `http://localhost:3000/admin`
 
 ## Notes
 

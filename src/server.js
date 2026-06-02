@@ -15,7 +15,7 @@ app.use(express.static(path.join(__dirname)));
 app.use('/produkter', produkterRouter);
 
 // Admin panel
-app.get('/admin', (req, res) => {
+app.get(['/admin', '/admin/'], (req, res) => {
     res.sendFile(path.join(__dirname, 'adminpanel.html'));
 });
 

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="adminpanel.css">
+</head>
+<body>
+    <main>
+        <h1>Admin Panel</h1>
+        <section class="form-container">
+            <h2>Legg til nytt produkt</h2>
+            <form id="product-form">
+                <label>
+                    Navn
+                    <input type="text" id="navn" name="navn" required />
+                </label>
+                <label>
+                    Pris
+                    <input type="number" id="pris" name="pris" step="0.01" min="0" required />
+                </label>
+                <label>
+                    Bilde-URL
+                    <input type="url" id="bilde" name="bilde" placeholder="https://example.com/image.jpg" />
+                </label>
+                <label>
+                    Beskrivelse
+                    <textarea id="beskrivelse" name="beskrivelse" placeholder="Skriv en kort beskrivelse"></textarea>
+                </label>
+                <div class="button-row">
+                    <button type="submit" id="submit-button">Legg til produkt</button>
+                    <button type="button" id="cancel-button" class="hidden">Avbryt redigering</button>
+                </div>
+            </form>
+            <div id="message" aria-live="polite"></div>
+        </section>
+
+        <section class="product-list">
+            <h2>Eksisterende produkter</h2>
+            <div id="products">Laster produkter...</div>
+        </section>
+    </main>
+    <script src="adminpanel.js"></script>
+</body>
+</html>

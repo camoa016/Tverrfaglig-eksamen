@@ -21,11 +21,7 @@ app.get('/admin', (req, res) => {
 
 // Health and root
 app.get('/', (req, res) => {
-    res.send('Tverrfaglig eksamen - Server running');
-});
-
-app.get('/health', (req, res) => {
-    res.status(200).json({ status: 'OK' });
+    res.sendFile(path.join(__dirname, 'brukervisning.html'));
 });
 
 // Start server

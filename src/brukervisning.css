@@ -1,0 +1,216 @@
+/* Brukervisning - Wedding planning theme */
+:root {
+    color-scheme: light;
+    font-family: "Cormorant Garamond", "Georgia", serif;
+    background: #fdf7f3;
+    color: #3a2f2f;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: radial-gradient(circle at top, rgba(255, 245, 239, 0.9), rgba(253, 247, 243, 1) 55%);
+}
+
+.product-list {
+    max-width: 1120px;
+    margin: 2.5rem auto;
+    padding: 0 1.25rem 3rem;
+}
+
+.product-list h2 {
+    margin: 0 0 1.2rem;
+    font-size: clamp(2.1rem, 3vw, 2.8rem);
+    text-align: center;
+    color: #6f4a3e;
+    letter-spacing: 0.02em;
+    font-family: "Great Vibes", cursive;
+}
+
+#products {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.product-card {
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(172, 138, 123, 0.24);
+    border-radius: 24px;
+    box-shadow: 0 18px 38px rgba(108, 84, 69, 0.08);
+    padding: 1.5rem 1.4rem;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    cursor: pointer;
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(173, 120, 95, 0.35);
+    box-shadow: 0 24px 48px rgba(108, 84, 69, 0.14);
+}
+
+.product-card h3 {
+    margin: 0 0 0.65rem;
+    font-size: 1.35rem;
+    color: #5b3b35;
+}
+
+.product-card p {
+    margin: 0;
+    line-height: 1.8;
+    color: #6f5a54;
+    font-size: 1rem;
+}
+
+.product-card .product-price {
+    margin-top: 0.85rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #a96545;
+}
+
+#products:empty {
+    min-height: 240px;
+}
+
+#products:empty::before {
+    content: "Laster produkter...";
+    display: block;
+    width: 100%;
+    padding: 2.5rem 1.1rem;
+    border: 2px dashed rgba(172, 138, 123, 0.35);
+    border-radius: 20px;
+    text-align: center;
+    color: #8f7368;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.product-card:focus-visible {
+    outline: 3px solid rgba(168, 109, 83, 0.45);
+    outline-offset: 4px;
+}
+
+.product-details {
+    margin-top: 2rem;
+    display: block;
+}
+
+.product-details.hidden {
+    display: none;
+}
+
+.details-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.98);
+    border: 1px solid rgba(172, 138, 123, 0.25);
+    border-radius: 26px;
+    padding: 1.75rem 1.75rem 1.6rem;
+    box-shadow: 0 20px 52px rgba(108, 84, 69, 0.12);
+}
+
+.details-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: none;
+    border-radius: 999px;
+    background: rgba(255, 246, 240, 0.9);
+    color: #6f4a3e;
+    font-size: 1.35rem;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.details-close:hover {
+    background: rgba(222, 193, 174, 0.95);
+}
+
+.details-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.details-header h3 {
+    margin: 0 0 0.5rem;
+    font-size: clamp(1.8rem, 2.5vw, 2.2rem);
+    color: #5b3b35;
+    font-family: "Great Vibes", cursive;
+}
+
+.details-price {
+    margin: 0;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #a96545;
+}
+
+.details-description {
+    margin: 1rem 0 1.2rem;
+    line-height: 1.95;
+    color: #695553;
+    font-size: 1rem;
+}
+
+.details-image {
+    margin: 0 0 1rem;
+}
+
+.details-image img {
+    width: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+    display: block;
+    border: 1px solid rgba(172, 138, 123, 0.2);
+}
+
+.details-link-wrapper {
+    margin: 0;
+}
+
+.details-link {
+    display: inline-block;
+    padding: 0.85rem 1.2rem;
+    background: #c47f60;
+    color: #fff;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: background 0.2s ease;
+}
+
+.details-link:hover {
+    background: #a35f44;
+}
+
+@media (max-width: 720px) {
+    .product-list {
+        margin: 1.5rem auto;
+        padding: 0 0.85rem 2rem;
+    }
+
+    .product-card {
+        padding: 1.2rem 1rem;
+    }
+
+    .product-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .details-card {
+        padding: 1.3rem 1rem 1rem;
+    }
+
+    .details-close {
+        top: 0.8rem;
+        right: 0.8rem;
+    }
+}

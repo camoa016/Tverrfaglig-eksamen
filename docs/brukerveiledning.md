@@ -1,12 +1,12 @@
 #   Plan for fremtidig brukerhåndtering:
 
-1.  Bedriften skal kun samle inn data som er helt nødvendig, som kontaktinformasjon, navn, bestillingsnummer, osv. og kunden skal   vite hvilken data som samles inn om dem
+1.  Bedriften skal kun samle inn data som er helt nødvendig, og kunden skal vite hvilken data som samles inn om dem
 
-2.  Data skal ikke lagres lengre enn nødvendig
+2.  Persondata skal ikke lagres lengre enn nødvendig, profilen til brukeren skal derimot ikke fjernes hvis ikke brukeren etterspør det selv.
 
-3.  Ha både fysisk og digitale kopier av dataen i tilfelle man mister dataen, og ha god sikkerhet for å unngå uautorisert tilgang, tap av data, eller tyveri
+3.  Ha både fysisk og digitale kopier av dataen i tilfelle man mister dataen, og ha god sikkerhet for å unngå uautorisert tilgang, tap av data, og tyveri
 
-4.  Kunden skal til enhver tid kunne få sine dataer slettet.
+4.  Kunden skal til enhver tid kunne etterspørre å få deres data slettet.
 
 #   Veiledning for hvordan registrere seg og hvordan handle i butikken:
 (dette er spekulativt, det er ikke funksjonalitet for å handle eller registrere seg på den faktiske nettsiden)
